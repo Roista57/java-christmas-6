@@ -19,7 +19,7 @@ public class InputView {
             String day = Console.readLine();
             return Integer.parseInt(day);
         }catch(NumberFormatException e){
-            throw new IllegalArgumentException("숫자가 아닌 값을 받았습니다.");
+            throw new IllegalArgumentException("숫자로 작성해주세요.");
         }
     }
 }
