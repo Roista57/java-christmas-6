@@ -24,6 +24,9 @@ public class ChristmasSystem {
 
         outputView.printMessage(Util.Message.ORDER.getMessage());
         ArrayList<Menu> menus = order();
+        int totalPrice = totalOrderPrice(menus);
+        outputView.printEvent(orderDay);
+        outputView.printOrderMenu(menus, totalPrice);
     }
 
     public int inputVisitErrorCheck(){
@@ -69,5 +72,22 @@ public class ChristmasSystem {
             menus.add(new Menu(menu.split(("-"))));
         }
         return menus;
+    }
+
+    public int totalOrderPrice(ArrayList<Menu> menus){
+        int totalPrice = DEFAULT;
+        for (Menu menu : menus){
+            totalPrice += orderPrice(menu);
+        }
+        return totalPrice;
+    }
+
+    private int orderPrice(Menu menu){
+        for (Util.Food food : Util.Food.values()) {
+            if (food.getName().equals(menu.getFoodName())){
+                return food.getPrice()*menu.getCount();
+            }
+        }
+        return DEFAULT;
     }
 }
