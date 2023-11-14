@@ -26,6 +26,15 @@ public class Menu {
         }
     }
 
+    public Util.Food searchMenu(){
+        for (Util.Food food : Util.Food.values()) {
+            if (food.getName().equals(foodName)){
+                return food;
+            }
+        }
+        throw new IllegalArgumentException();
+    }
+
     public String getFoodName(){
         return foodName;
     }
