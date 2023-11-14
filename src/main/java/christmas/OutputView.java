@@ -14,7 +14,11 @@ public class OutputView {
         }
 
     }
+    public void printMessage(String message){
+        System.out.println(message);
+    }
+
     public void startMessage(){
-        System.out.println(Message.STARTMESSAGE);
+        System.out.println(Message.STARTMESSAGE.getMessage());
     }
 }
