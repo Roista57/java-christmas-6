@@ -15,11 +15,10 @@ public class InputView {
     }
     public int inputVisit(){
         try{
-            System.out.print(Message.VISIT.getMessage());
             String day = Console.readLine();
             return Integer.parseInt(day);
         }catch(NumberFormatException e){
-            throw new IllegalArgumentException("숫자로 작성해주세요.");
+            throw new IllegalArgumentException(Util.Error.ERROR_DAY.getMessage());
         }
     }
 }
