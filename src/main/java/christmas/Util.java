@@ -65,4 +65,46 @@ public class Util {
             return type;
         }
     }
+    public enum EventDiscount{
+        WEEKDAYS(0,  "디저트", 2023),
+        WEEKENDS(1, "메인", 2023);
+        private final int typeNumber;
+        private final String type;
+        private final int price;
+
+        EventDiscount(int typeNumber, String type, int price){
+            this.typeNumber = typeNumber;
+            this.type = type;
+            this.price = price;
+        }
+
+        public int getTypeNumber(){
+            return typeNumber;
+        }
+
+        public String getType(){
+            return type;
+        }
+
+        public int getPrice(){
+            return price;
+        }
+    }
+
+    public enum Star{
+        DAY_3(3),
+        DAY_10(10),
+        DAY_17(17),
+        DAY_24(24),
+        DAY_25(25),
+        DAY_31(31);
+        private final int day;
+        Star(int day){
+            this.day = day;
+        }
+
+        public int getDay(){
+            return day;
+        }
+    }
 }
